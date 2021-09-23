@@ -1,0 +1,69 @@
+
+********For problem statement 1.*******
+----------Explanation of the above Mapper code:-------------------
+In line 1 we are taking a class by name Top5_categories,
+In line 2 we are extending the Mapper default class having the arguments keyIn as LongWritable and ValueIn as Text and KeyOut as Text and ValueOut as IntWritable.
+
+In line 3 we are declaring a private Text variable ‘category’ which will store the category of videos in youtube
+
+In line 4 we are declaring a private final static IntWritable variable ‘one’ which will be constant for every value. MapReduce deals with Key and Value pairs.Here we can set the key as gender and value as age.
+
+In line 5 we are overriding the map method which will run one time for every line.
+
+In line 7 we are storing the line in a string variable ‘line’
+
+In line 8 we are splitting the line by using tab “\t” delimiter and storing the values in a String Array so that all the columns in a row are stored in the string array.
+
+In line 9 we are taking a condition if we have the string array of length greater than 6 which means if the line or row has at least 7 columns then it will enter into the if condition and execute the code to eliminate the ArrayIndexOutOfBoundsException. 
+
+In line 10 we are storing the category which is in the 4th column.
+
+In line 12 we are writing the key and value into the context which will be the output of the map method.
+
+---------------While coming to the Reducer code--------------
+line 1 extends the default Reducer class with arguments KeyIn as Text and ValueIn as IntWritable which are same as the outputs of the mapper class and KeyOut as Text and ValueOut as IntWritbale which will be final outputs of our MapReduce program.
+
+In line 2 we are overriding the Reduce method which will run each time for every key.
+
+In line 3 we are declaring an integer variable sum which will store the sum of all the values for each key.
+
+In line 4 a for each loop is taken which will run each time for the values inside the “Iterable values” which are coming from the shuffle and sort phase after the mapper phase.
+
+In line 5 we are storing and calculating the sum of the values.
+
+In line 7 writes the respected key and the obtained sum as value to the 
+context.
+
+
+************For problem statement 2****************
+
+----------------Explanation of the above Mapper code----------------
+In line 1 we are taking a class by name Video_rating
+In line 2 we are extending the Mapper default class having the arguments keyIn as LongWritable and ValueIn as Text and KeyOut as Text and ValueOut as FloatWritable.
+In line 4 we are declaring a private Text variable ‘video_name’ which will store the video name which is in an encrypted format.
+In line 5 we are declaring a private FloatWritable variable ‘rating’ which will store the rating of the video. MapReduce deals with Key and Value pairs.Here we can set the key as gender and value as age.
+In line 6 we are overriding the map method which will run one time for every line.
+In line 8 we are storing the line in a string variable ‘line’
+In line 9 we are taking a condition if we have the string array length greater than 7 which means if the line or row has at least 7 columns then it will enter into the if condition and execute the code to eliminate the ArrayIndexOutOfBoundsException.
+In line 10 we are splitting the line by using tab “\t” delimiter and storing the values in a String Array so that all the columns in a row are stored in the string array.
+In line 11 we are storing the video name which is in the 1st column.
+In line 12 we are checking whether the data in that index is numeric data or not by using a regular expression which can be achieved by “matches function in java”, if it is numeric data then it will proceed and it should be a floating value as well.
+In line 13 we are converting that numeric data into Float data by type casting.
+In line 14 we are storing the rating of the video in ‘rating’ variable.
+In line 17 we are writing the key and value into the context which will be the output of the map method.
+
+----------While coming to the Reducer code---------
+
+line 1 extends the default Reducer class with arguments KeyIn as Text and ValueIn as IntWritable which are same as the outputs of the mapper class and KeyOut as Text and ValueOut as IntWritbale which will be final outputs of our MapReduce program.
+
+In line 2 we are overriding the Reduce method which will run each time for every key.
+
+In line 4 we are declaring an integer sum which will store the sum of all the ages of people in it.
+
+In line 5 we are taking another variable as “l” which will be incremented every time as many values are there for that key.
+
+In line 6 a for each loop is taken which will run each time for the values inside the “Iterable values” which are coming from the shuffle and sort phase after the mapper phase.
+
+In line 8 we are storing and calculating the sum of the values.
+
+In line 10 we are performing the average of the obtained sum and writes the respected key and the obtained sum as value to the context.
