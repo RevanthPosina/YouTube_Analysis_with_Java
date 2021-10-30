@@ -1,7 +1,7 @@
-
+            :tv:	Youtube Analysis      :film_projector:	
 ********For problem statement 1.*******
 
-1. Open terminal
+1. Open terminal :desktop_computer:
 
 2. hadoop fs -mkdir /youtube
 
@@ -13,7 +13,7 @@
 
 5. Then source ~/.bashrc
 
-6. cd Desktop
+6. cd Desktop :dvd:
 
 7. Now compile youtube1.java file suppose that file is on Desktop
 
@@ -55,7 +55,7 @@
 	
 	jar cf wc.jar youtube2*.class
 
-9. To execute
+9. To execute :minidisc:
 	
 	hadoop jar wc.jar youtube2 /youtube/youtubedata.txt /videorating
 
