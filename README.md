@@ -67,3 +67,9 @@
 
 11. hadoop fs -cat /videorating/part-r-00000
 
+
+Hadoop
+Hadoop is a distributed computing Framework developed and maintained by The Apache Software Foundation written in Java. Hadoop consists of HDFS and MapReduce and is genrally deployed in a group of machines called cluster. Initially, GFS and MapReduce were built to empower Google Search. HDFS stands for Hadoop Distributed File System and is used to store data across multiple disks.MapReduce is a way to parallelize Data processing tasks.
+
+This project implements Hadoop MapReduce algorithm on the YouTube data and display the result on a web server.
+
