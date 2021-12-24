@@ -5,6 +5,10 @@
 
 ********For problem statement 1.*******
 
+We analyze the data to identify the top 5 categories in which the most number of videos are uploaded. The dataset is gathered using the YouTube API and stored in Hadoop Distributed File System(HDFS). MapReduce algorithm is applied to process the dataset and identify the video categories.
+
+
+
 1. Open terminal :desktop_computer:
 
 2. hadoop fs -mkdir /youtube
